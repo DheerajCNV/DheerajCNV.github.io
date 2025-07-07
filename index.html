@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links animate-nav">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+      </ul>
+      <div class="menu-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </div>
+    </nav>
+  </header>
+
+<!-- Hero Section -->
+<section id="home" class="hero">
+  <div class="hero-content">
+    <div class="hero-text fade-in-left">
+      <h1>Hi, I'm <span>Dheeraj Chilukuri</span></h1>
+      <h2 id="typewriter"></h2>
+      <p>MS in Robotics and Autonomous Systems at Arizona State University</p>
+      <div class="hero-buttons">
+        <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
+        <a href="#contact" class="btn btn-outline">Contact Me</a>
+      </div>
+    </div>
+    <div class="hero-image fade-in-right">
+      <img src="images/profile.jpg" alt="Profile Image" />
+    </div>
+  </div>
+</section>
+
+  <!-- About Section -->
+  <section id="about" class="about fade-in-left">
+    <h2 class="section-title">About Me</h2>
+    <div class="about-content">
+      <!-- About image removed -->
+      <div class="about-text" style="width: 100%;">
+        <h3>Who I Am</h3>
+        <p style="text-align: justify;">
+          Hello! I am Dheeraj, a passionate robotics engineer completing my Master's at Arizona State University. My interests lie at the intersection of Autonomous Systems, Aerial Robotics, and Machine Learning, with a strong focus on Perception, Motion Planning, and Intelligent Control. I received my Bachelor's in Mechanical Engineering from the 
+          <a href="https://iittp.ac.in/" target="_blank" rel="noopener noreferrer">Indian Institute of Technology Tirupati</a> in May 2023.
+        </p>
+        <p style="text-align: justify;">
+          I love working hands-on with hardware and software and enjoy building systems that bridge theory and real-world applications. My current research at ASU involves UAV-based hyperspectral imaging for land cover and land use change (LCLUC) analysis, where I integrate deep learning models for environmental monitoring.
+        </p>
+        <p style="text-align: justify;">
+          Over the years, I've worked on a variety of interdisciplinary projects — from developing drone swarms and remote sensing tools to simulating robotic manipulators and production systems. Whether it's programming autonomous flight paths, modelling robotic dynamics in MATLAB, or creating 3D terrain maps using ROS, I thrive at the crossroads of robotics, software, and innovation.
+        </p>
+        <p style="text-align: justify;">
+          Have a look at some of my projects below!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section (NEW) -->
+  <section id="skills" class="skills-section fade-in-right">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-container">
+      <span class="skill">Python</span>
+      <span class="skill">MATLAB</span>
+      <span class="skill">C programming</span>
+      <span class="skill">ROS</span>
+      <span class="skill">Gazebo</span>
+      <span class="skill">SLAM</span>
+      <span class="skill">Machine Learning</span>
+      <span class="skill">ANSYS</span>
+      <span class="skill">Solidworks</span>
+      <span class="skill">PTC Creo</span>
+      <span class="skill">Siemens Tecnomatix</span>
+      <span class="skill">HTML5</span>
+      <span class="skill">CSS3</span>
+      <span class="skill">JavaScript</span>
+      <span class="skill">React</span>
+      <span class="skill">Node.js</span>
+      <span class="skill">MongoDB</span>
+      <span class="skill">Git</span>
+      <span class="skill">Blender</span>      
+      <span class="skill">Microsoft Office</span>
+      <span class="skill">Tableau</span>
+      <span class="skill">Adobe Creative Cloud</span>
+      <!--<span class="skill">Responsive Design</span>
+      <span class="skill">UI/UX</span> -->
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects fade-in-left">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-grid">
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="/api/placeholder/400/200" alt="Project 1">
+        </div>
+        <div class="project-info">
+          <h3>E-Commerce Platform</h3>
+          <p>A full-stack e-commerce application with user authentication, product management, and payment processing.</p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">MongoDB</span>
+            <span class="project-tag">Stripe</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-primary">Live Demo</a>
+            <a href="#" class="btn btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="/api/placeholder/400/200" alt="Project 2">
+        </div>
+        <div class="project-info">
+          <h3>Task Management App</h3>
+          <p>A responsive task management application with drag-and-drop functionality and real-time updates.</p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Firebase</span>
+            <span class="project-tag">Material UI</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-primary">Live Demo</a>
+            <a href="#" class="btn btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <div class="project-image">
+          <img src="/api/placeholder/400/200" alt="Project 3">
+        </div>
+        <div class="project-info">
+          <h3>Weather Dashboard</h3>
+          <p>A weather dashboard that displays current and forecasted weather data for any location using APIs.</p>
+          <div class="project-tags">
+            <span class="project-tag">JavaScript</span>
+            <span class="project-tag">OpenWeather API</span>
+            <span class="project-tag">Chart.js</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="btn btn-primary">Live Demo</a>
+            <a href="#" class="btn btn-outline">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+  <div class="footer-content">
+    <div class="social-links">
+      <a href="mailto:dheerajcnv@gmail.com" class="social-link" aria-label="Email" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/DheerajCNV" class="social-link" aria-label="GitHub" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/dheerajcnv" class="social-link" aria-label="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <p class="footer-text">© 2025 Dheeraj Chilukuri. All rights reserved.</p>
+  </div>
+</footer>
+
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
