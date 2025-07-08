@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
+  <title>Dheeraj's Portfolio</title>
   <link rel="stylesheet" href="assets/css/styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -13,7 +13,7 @@
     <nav class="navbar">
       <ul class="nav-links animate-nav">
         <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#profile-snapshot">About</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#projects">Projects</a></li>
       </ul>
@@ -32,25 +32,26 @@
 <section id="home" class="hero">
   <div class="hero-content">
     <div class="hero-text fade-in-left">
-      <h1>Hi, I'm <span>Dheeraj Chilukuri</span></h1>
-      <h2 id="typewriter"></h2>
-      <p>MS in Robotics and Autonomous Systems at Arizona State University</p>
+      <h1>Hi, I'm <span id="typewriter-name"></span></h1>
+      <h2 class="static-role">Roboticist</h2>
+      <p>Dive into my experiences, projects and accomplishments, etc. </p>
       <div class="hero-buttons">
         <a href="resume.pdf" class="btn btn-primary" download>Download Resume</a>
-        <a href="#contact" class="btn btn-outline">Contact Me</a>
       </div>
     </div>
     <div class="hero-image fade-in-right">
-      <img src="images/profile.jpg" alt="Profile Image" />
+      <a href="index.html">
+        <img src="images/profile.jpg" alt="Profile Image" class="rounded-image" />
+      </a>
     </div>
   </div>
 </section>
 
-  <!-- About Section -->
+  <!-- About Section 
   <section id="about" class="about fade-in-left">
     <h2 class="section-title">About Me</h2>
     <div class="about-content">
-      <!-- About image removed -->
+       About image removed
       <div class="about-text" style="width: 100%;">
         <h3>Who I Am</h3>
         <p style="text-align: justify;">
@@ -68,10 +69,73 @@
         </p>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <!-- Skills Section (NEW) -->
-  <section id="skills" class="skills-section fade-in-right">
+  <!-- Profile Snapshot Section -->
+<section id="profile-snapshot" class="profile-snapshot fade-in-left">
+  <!--<h2 class="section-title">Profile Snapshot</h2> -->
+  <div class="snapshot-grid">
+    <!-- Academic Background -->
+    <div class="snapshot-card">
+      <i class="fas fa-graduation-cap snapshot-icon"></i>
+      <p>MS in Robotics and Autonomous Systems<br>
+        (2024–2026)<br>
+        Arizona State University,AZ, USA</p>
+    </div>
+
+    <!-- What Drives Me -->
+    <div class="snapshot-card">
+      <i class="fas fa-bolt snapshot-icon"></i>
+      <h3>What Drives Me</h3>
+      <p>I thrive at the intersection of autonomy and intelligence, with a passion for building robots that learn and adapt in the real world.</p>
+    </div>
+
+    <!-- Hands-On Experience -->
+    <div class="snapshot-card">
+      <i class="fas fa-graduation-cap snapshot-icon"></i>
+      <p>B.Tech in Mechanical Engineering<br> 
+        (2019–2023)<br>
+        Indian Institute of Technology Tirupati, India</p></div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience" class="experience-section fade-in-right">
+  <h2 class="section-title">Experience</h2>
+  <div class="projects-grid">
+    <!-- Experience Card 1 -->
+      <div class="project-card">
+        <div class="project-info">
+          <h3>Graduate research aide</h3>
+          <p>A full-stack e-commerce application with user authentication, product management, and payment processing.</p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">MongoDB</span>
+            <span class="project-tag">Stripe</span>
+          </div>
+        </div>
+      </div>
+
+    <!-- Experience Card 2 -->
+    <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-info">
+          <h3>Mechanical Research Intern</h3>
+          <p>A full-stack e-commerce application with user authentication, product management, and payment processing.</p>
+          <div class="project-tags">
+            <span class="project-tag">React</span>
+            <span class="project-tag">Node.js</span>
+            <span class="project-tag">MongoDB</span>
+            <span class="project-tag">Stripe</span>
+          </div>
+        </div>
+      </div>
+  </div>
+</section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section fade-in-left">
     <h2 class="section-title">Skills</h2>
     <div class="skills-container">
       <span class="skill">Python</span>
@@ -102,7 +166,7 @@
   </section>
 
   <!-- Projects Section -->
-  <section id="projects" class="projects fade-in-left">
+  <section id="projects" class="projects fade-in-right">
     <h2 class="section-title">Projects</h2>
     <div class="projects-grid">
       <!-- Project 1 -->
@@ -168,6 +232,25 @@
     </div>
   </section>
 
+<!-- Courses Section -->
+<section id="courses" class="courses-section fade-in-left">
+  <h2 class="section-title">Certifications & Coursework</h2>
+  <div class="courses-grid">
+    <ul class="course-list">
+      <li>Autonomous Mobile Robots</li>
+      <li>Computer Vision</li>
+      <li>Machine Learning</li>
+      <li>Deep Learning for Robotics</li>
+    </ul>
+    <ul class="course-list">
+      <li>Robotic Kinematics and Dynamics</li>
+      <li>Control Systems</li>
+      <li>SLAM and Localization</li>
+      <li>Embedded Systems</li>
+    </ul>
+  </div>
+</section>
+
   <!-- Footer -->
   <footer>
   <div class="footer-content">
@@ -190,3 +273,4 @@
   <script src="assets/js/script.js"></script>
 </body>
 </html>
+

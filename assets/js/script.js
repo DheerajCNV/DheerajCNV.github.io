@@ -44,40 +44,32 @@ const appearOnScroll = new IntersectionObserver((entries) => {
 
 faders.forEach(el => appearOnScroll.observe(el));
 
-// Typewriter effect
+// Typewriter effect for name
 document.addEventListener("DOMContentLoaded", () => {
-  const roles = [
-    "Roboticist",
-    //"UAV Developer",
-    //"Machine Learning Researcher"
-  ];
-
-  const typewriterElement = document.getElementById("typewriter");
-  let roleIndex = 0, charIndex = 0;
+  const name = "Dheeraj Chilukuri";
+  const el = document.getElementById("typewriter-name");
+  let index = 0;
   let typing = true;
 
-  function typeRole() {
-    const current = roles[roleIndex];
+  function typeLoop() {
     if (typing) {
-      typewriterElement.textContent = current.substring(0, charIndex++);
-      if (charIndex > current.length) {
+      el.textContent = name.substring(0, index++);
+      if (index > name.length) {
         typing = false;
-        setTimeout(typeRole, 1000); // pause before deleting
+        setTimeout(typeLoop, 1000); // pause before deleting
       } else {
-        setTimeout(typeRole, 100);
+        setTimeout(typeLoop, 75); // typing speed
       }
     } else {
-      typewriterElement.textContent = current.substring(0, charIndex--);
-      if (charIndex < 0) {
+      el.textContent = name.substring(0, --index);
+      if (index === 0) {
         typing = true;
-        roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typeRole, 300);
+        setTimeout(typeLoop, 500); // pause before retyping
       } else {
-        setTimeout(typeRole, 50);
+        setTimeout(typeLoop, 50); // deleting speed
       }
     }
   }
 
-  typeRole();
+  typeLoop();
 });
-

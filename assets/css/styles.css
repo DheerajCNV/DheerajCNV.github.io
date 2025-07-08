@@ -26,7 +26,9 @@ body {
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
+  width: 100%;
   transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;  /* prevent sideways scroll */
 }
 
 /* Header */
@@ -90,12 +92,13 @@ header {
 .hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 2rem 5%;
+  padding: 2rem 2rem;
   display: flex;
+  align-items: center; /* change from flex-start to center */
   justify-content: space-between;
-  align-items: center;
-  gap: 2rem;
+  gap: 4rem;
   flex-wrap: nowrap;
+  overflow-x: hidden;
 }
 
 .hero-text {
@@ -110,8 +113,20 @@ header {
   overflow-wrap: normal;
 }
 
-.hero-text h1 span {
+#typewriter-name {
+  display: inline-block;
+  min-width: 15ch; /* Reserve space to avoid layout shift */
+  border-right: 2px solid var(--accent-color);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.75s step-end infinite;
   color: var(--accent-color);
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
 }
 
 .hero-text h2 {
@@ -124,19 +139,23 @@ header {
   font-size: 1.1rem;
   margin-bottom: 2rem;
   color: var(--text-secondary);
+  min-height: 2rem;
 }
 
 .hero-image {
-  flex: 1 1 50%;
+  flex: 0 0 auto;
+  min-width: 340px;
+  max-width: 340px;
   text-align: center;
+  margin-top: 2rem;
+  transform: none; /* Prevent image shifting */
 }
 
 .hero-image img {
   width: 100%;
-  max-width: 300px;
+  max-width: 340px;
   height: auto;
-  margin-top: 2rem;
-  border-radius: 10px;
+  border-radius: 5px;
   box-shadow: var(--card-shadow);
 }
 
@@ -192,6 +211,7 @@ header {
 }
 
 .projects-grid {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -205,6 +225,7 @@ header {
   overflow: hidden;
   box-shadow: var(--card-shadow);
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 .project-card:hover {
@@ -292,6 +313,7 @@ footer {
 .footer-content {
   max-width: 1200px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .footer-links {
@@ -442,7 +464,7 @@ footer {
 
 .visible {
   opacity: 1 !important;
-  transform: translateX(0) !important;
+  transform: translate(0) !important;
 }
 
 /*scoial links*/
@@ -470,4 +492,104 @@ footer {
 .social-link:hover {
   background-color: var(--accent-color);
   color: white;
+}
+
+/* Typewriter effect for name */
+#typewriter-name {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  font-size: 3.5rem;
+  font-weight: bold;
+  width: 15ch; /* Fix width based on longest text */
+  animation: typing 2.5s steps(15, end), blink-caret 0.7s step-end infinite;
+  vertical-align: top;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 15ch; }
+}
+
+/* Profile Snapshot Section */
+.profile-snapshot {
+  padding: 5rem 5%;
+  background-color: var(--bg-secondary);
+}
+
+.snapshot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.snapshot-card {
+  background-color: var(--bg-accent);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.snapshot-card:hover {
+  transform: translateY(-8px);
+}
+
+.snapshot-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+/* Experience Section (reuses project card layout) */
+.experience-section {
+  padding: 5rem 5%;
+  background-color: var(--bg-secondary);
+  text-align: center;
+}
+
+.experience-section .projects-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Courses Section */
+.courses-section {
+  padding: 5rem 5%;
+  background-color: var(--bg-accent);
+  text-align: center;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  justify-content: center; /* centers grid */
+}
+
+.course-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  text-align: left;
+  margin: 0 auto;
+}
+
+.course-list li {
+  margin-bottom: 0.75rem;
 }
