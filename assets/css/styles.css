@@ -6,8 +6,10 @@
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-html {
-  scroll-behavior: smooth;
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
 :root {
@@ -169,7 +171,7 @@ header {
 
 /* About Section */
 .about {
-  padding: 5rem 5%;
+  padding: 5rem 5rem;
   background-color: var(--bg-secondary);
 }
 
@@ -182,7 +184,7 @@ header {
 
 /* Skills Section */
 .skills-section {
-  padding: 5rem 5%;
+  padding: 5rem 5rem;
   background-color: var(--bg-secondary);
   text-align: center;
 }
@@ -206,7 +208,7 @@ header {
 
 /* Projects */
 .projects {
-  padding: 5rem 5%;
+  padding: 5rem 5rem;
   background-color: var(--bg-accent);
 }
 
@@ -306,7 +308,7 @@ header {
 /* Footer */
 footer {
   background-color: var(--bg-secondary);
-  padding: 2rem 5%;
+  padding: 2rem 2rem;
   text-align: center;
 }
 
@@ -515,7 +517,7 @@ footer {
 
 /* Profile Snapshot Section */
 .profile-snapshot {
-  padding: 5rem 5%;
+  padding: 5rem 5rem;
   background-color: var(--bg-secondary);
 }
 
@@ -549,7 +551,7 @@ footer {
 
 /* Experience Section (reuses project card layout) */
 .experience-section {
-  padding: 5rem 5%;
+  padding: 5rem 5rem;
   background-color: var(--bg-secondary);
   text-align: center;
 }
@@ -564,9 +566,22 @@ footer {
   width: 100%;
 }
 
+.experience-list {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  text-align: left;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.experience-list li {
+  margin-bottom: 0.75rem;
+}
+
 /* Courses Section */
 .courses-section {
-  padding: 5rem 5%;
+  padding: 5rem 2rem;
   background-color: var(--bg-accent);
   text-align: center;
 }

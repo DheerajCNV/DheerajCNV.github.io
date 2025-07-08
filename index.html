@@ -13,9 +13,11 @@
     <nav class="navbar">
       <ul class="nav-links animate-nav">
         <li><a href="#home">Home</a></li>
-        <li><a href="#profile-snapshot">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
+          <li><a href="#profile-snapshot">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#courses">Courses</a></li>
       </ul>
       <div class="menu-toggle">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -90,7 +92,7 @@
       <p>I thrive at the intersection of autonomy and intelligence, with a passion for building robots that learn and adapt in the real world.</p>
     </div>
 
-    <!-- Hands-On Experience -->
+    <!-- Undergraduate -->
     <div class="snapshot-card">
       <i class="fas fa-graduation-cap snapshot-icon"></i>
       <p>B.Tech in Mechanical Engineering<br> 
@@ -107,27 +109,37 @@
       <div class="project-card">
         <div class="project-info">
           <h3>Graduate research aide</h3>
-          <p>A full-stack e-commerce application with user authentication, product management, and payment processing.</p>
+          <ul class="experience-list">
+            <li>I assist <a href="https://search.asu.edu/profile/4383477" target="_blank" rel="noopener noreferrer">Dr. Saurav Kumar</a> in UAV-based hyperspectral data collection and analysis of cotton, canola, and soil samples across Arizona as part of his
+              <a href="https://waterdmd.info/" target="_blank" rel="noopener noreferrer">WaterDMD Lab's</a> agricultural monitoring initiatives.</li>
+              <li>Developed two STELLA prototypes—portable, 3D-printed multispectral sensing devices—for monitoring water quality parameters such as algal growth, nitrogen, phosphorus, and microplastics under the NASA Landsat initiative.</li>
+              <li>Involved in creating ML models for Land-Cover and Land Use Change (LCLUC) data in the Rio Grande Basin watershed.</li>
+            </ul>
           <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">MongoDB</span>
-            <span class="project-tag">Stripe</span>
+            <span class="project-tag">Hyperspectral Imaging</span>
+            <span class="project-tag">Machine Learning</span>
+            <span class="project-tag">3D-printing</span>
+            <span class="project-tag">Prototyping</span>
           </div>
         </div>
       </div>
 
     <!-- Experience Card 2 -->
-    <!-- Project 1 -->
       <div class="project-card">
         <div class="project-info">
           <h3>Mechanical Research Intern</h3>
-          <p>A full-stack e-commerce application with user authentication, product management, and payment processing.</p>
+          <ul class="experience-list">
+            <li>Worked under the supervision of 
+              <a href="https://cmti.res.in/cmtiemployee/tom-thampy/" target="_blank" rel="noopener noreferrer">Mr. Tom Thampy</a> at 
+              <a href="https://cmti.res.in/" target="_blank" rel="noopener noreferrer">Central Manufacturing Technology Institute</a>, Bengaluru.</li>
+            <li>Designed a hydraulic system apparatus for testing the fuel line replacement unit to heat Jet A1 fuel beyond its autoignition point for fuel supply at 270 degrees Celsius.</li>
+            <li>Created various system configurations in SolidWorks and performed CFD analysis on Ansys Fluent to understand the systems' temperature and pressure distributions.</li>
+          </ul>
           <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">MongoDB</span>
-            <span class="project-tag">Stripe</span>
+            <span class="project-tag">Ansys Fluent</span>
+            <span class="project-tag">SolidWorks</span>
+            <span class="project-tag">CFD Analysis</span>
+            <span class="project-tag">Thermal Systems Design</span>
           </div>
         </div>
       </div>
@@ -138,13 +150,14 @@
   <section id="skills" class="skills-section fade-in-left">
     <h2 class="section-title">Skills</h2>
     <div class="skills-container">
+      <span class="skill">Robot Operating Syatem (ROS)</span>
       <span class="skill">Python</span>
-      <span class="skill">MATLAB</span>
+      <span class="skill">MATLAB Simulink</span>
       <span class="skill">C programming</span>
-      <span class="skill">ROS</span>
       <span class="skill">Gazebo</span>
       <span class="skill">SLAM</span>
       <span class="skill">Machine Learning</span>
+      <span class="skill">Tensorflow</span>
       <span class="skill">ANSYS</span>
       <span class="skill">Solidworks</span>
       <span class="skill">PTC Creo</span>
