@@ -18,6 +18,7 @@
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
           <li><a href="#courses">Courses</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="menu-toggle">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
@@ -108,7 +109,10 @@
     <!-- Experience Card 1 -->
       <div class="project-card">
         <div class="project-info">
-          <h3>Graduate research aide</h3>
+           <div class="logo-title-container">
+            <img src="images/asu.png" alt="ASU Logo" class="company-logo">
+           </div>
+           <h3>Graduate research aide</h3>
           <ul class="experience-list">
             <li>I assist <a href="https://search.asu.edu/profile/4383477" target="_blank" rel="noopener noreferrer">Dr. Saurav Kumar</a> in UAV-based hyperspectral data collection and analysis of cotton, canola, and soil samples across Arizona as part of his
               <a href="https://waterdmd.info/" target="_blank" rel="noopener noreferrer">WaterDMD Lab's</a> agricultural monitoring initiatives.</li>
@@ -127,6 +131,9 @@
     <!-- Experience Card 2 -->
       <div class="project-card">
         <div class="project-info">
+          <div class="logo-title-container">
+            <img src="images/cmti.png" alt="CMTI Logo" class="company-logo">
+           </div>
           <h3>Mechanical Research Intern</h3>
           <ul class="experience-list">
             <li>Worked under the supervision of 
@@ -185,21 +192,28 @@
       <!-- Project 1 -->
       <div class="project-card">
         <div class="project-image">
-          <img src="/api/placeholder/400/200" alt="Project 1">
+          <img src="images/rmvsnet.png" alt="Project 1">
         </div>
         <div class="project-info">
-          <h3>E-Commerce Platform</h3>
-          <p>A full-stack e-commerce application with user authentication, product management, and payment processing.</p>
+          <h3>Depth Inference for Unstructured Multi-View Stereo using R-MVSNet</h3>
+          <p class="project-description">
+            In this project, we developed a convolutional GRU-based cost volume regularization function based on R-MVSNet for efficient multi-view depth inference and benchmarked it against MVSNet on DTU, achieving improved accuracy, F-score, and 40% faster inference. We also created an end-to-end training and evaluation pipeline with statistical and visual perfomance analysi
+          </p>
+          <button class="read-more-btn">Read more</button>
           <div class="project-tags">
-            <span class="project-tag">React</span>
-            <span class="project-tag">Node.js</span>
-            <span class="project-tag">MongoDB</span>
-            <span class="project-tag">Stripe</span>
+            <span class="project-tag">Tensorflow</span>
+            <span class="project-tag">Machine Learning</span>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">3D reconstruction</span>
           </div>
           <div class="project-links">
-            <a href="#" class="btn btn-primary">Live Demo</a>
-            <a href="#" class="btn btn-outline">GitHub</a>
-          </div>
+            <a href="pdfs/rmvsnet.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Find out more
+            </a>
+            <a href="https://github.com/DheerajCNV/Unstructured-Multi-View-Stereo-using-R-MVSNet" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+</div>
         </div>
       </div>
 
@@ -250,22 +264,23 @@
   <h2 class="section-title">Certifications & Coursework</h2>
   <div class="courses-grid">
     <ul class="course-list">
-      <li>Autonomous Mobile Robots</li>
-      <li>Computer Vision</li>
-      <li>Machine Learning</li>
-      <li>Deep Learning for Robotics</li>
+      <li>Perception in Robotics</li>
+      <li>Advanced system modelling, dynamics and control</li>
+      <li>Modelling and Control of Robots</li>
+      <li>Machine Learning & Data Science (Udemy)</li>
     </ul>
     <ul class="course-list">
-      <li>Robotic Kinematics and Dynamics</li>
-      <li>Control Systems</li>
-      <li>SLAM and Localization</li>
-      <li>Embedded Systems</li>
+      <li>Robotic Systems II</li>
+      <li>Multi Robot Systems</li>
+      <li>Aerial Robotics (UPen, Coursera)</li>
+      <li>Fundamentals of Artificial Intelligence (IIT Guwathi, NPTEL)21</li>
     </ul>
   </div>
 </section>
 
   <!-- Footer -->
-  <footer>
+  <footer id="contact">
+    <h2 class="section-title">Contact</h2>
   <div class="footer-content">
     <div class="social-links">
       <a href="mailto:dheerajcnv@gmail.com" class="social-link" aria-label="Email" target="_blank">

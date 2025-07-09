@@ -73,3 +73,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   typeLoop();
 });
+
+//logo and company name hover effect
+document.querySelectorAll('.company-logo').forEach(logo => {
+  logo.addEventListener('mouseenter', () => {
+    logo.style.transform = 'scale(1.1)';
+    logo.style.transition = 'transform 0.3s ease';
+  });
+
+  logo.addEventListener('mouseleave', () => {
+    logo.style.transform = 'scale(1)';
+  });
+});
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
+//Read more/less button for project descriptions
+document.querySelectorAll('.read-more-btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const description = button.previousElementSibling;
+    description.classList.toggle('expanded');
+    button.textContent = description.classList.contains('expanded') ? 'Read less' : 'Read more';
+  });
+});
