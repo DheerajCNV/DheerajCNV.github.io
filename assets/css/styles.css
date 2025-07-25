@@ -667,3 +667,9 @@ footer {
   font-size: 0.9rem;
   margin-top: 5px;
 }
+
+.hero-buttons.social-links .social-link {
+  width: 60px;
+  height: 60px;
+  font-size: 1.4rem;
+}
