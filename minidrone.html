@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vision-Based Mini Drone Precision Landing on a Moving Platform</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links animate-nav">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Back to Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="project-detail" style="padding: 8rem 5% 5rem; background-color: var(--bg-primary); color: var(--text-primary);">
+    <h1 class="section-title">Vision-Based Mini Drone Precision Landing on a Moving Platform</h1>
+    <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem;">
+      Objective: Program the Parrot Mambo drone to autonomously land on a moving platform (line follower robot) using vision-based detection and position prediction in Simulink.
+    </p>
+
+    <section style="max-width: 800px; margin: 2rem auto;">
+      <h2>1. Triggered Descent via RGB Platform Detection</h2>
+      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>Implemented an image processing system using a custom MATLAB function createMask to detect a green-colored landing pad.</li>
+        <li>The system masked green areas to white and calculated the center and area of the region.</li>
+        <li>Detection was confirmed when the white pixel area exceeded a threshold (~3000 pixels), triggering a Boolean flag (targetdetectflag).</li>
+        <li>This flag was routed through a modified OR block in the Landing Enable submodel to initiate descent.</li>
+      </ul>
+    </section>
+
+    <section style="max-width: 800px; margin: 2rem auto;">
+        <h2>2. Timed Landing on a Moving Platform</h2>
+        <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+            <li>
+                Created a Stateflow chart with three primary states:
+                <ul style="list-style: circle; padding-left: 1.5rem; margin-top: 0.5rem;">
+                    <li>TakeOff: Ascends to 1.1 meters</li>
+                    <li>MoveForward: Follows the line</li>
+                    <li>Land: Initiates descent upon platform detection</li>
+                </ul>
+            </li>
+            <li>The drone continuously received xestimate, yestimate, and platform detection flags to track the platform’s position.</li>
+            <li>Overrode the position control logic to generate xout, yout, and zout commands for real-time path correction.</li>
+            <li>X-Y position prediction logic ensured the drone began descent at the right moment to land before or exactly at the end of the line, based on the robot's velocity (~0.15–0.2 m/s).</li>
+        </ul>
+        </section>
+
+        <section style="max-width: 800px; margin: 2rem auto;">
+            <h2>3. Results</h2>
+            <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+            <li>The drone detected the RGB platform accurately using onboard vision.</li>
+            <li>It matched the robot’s motion and initiated a smooth descent.</li>
+            <li>Landing was successfully completed once the altitude dropped below 0.2 meters, and alignment was maintained.</li>
+            </ul>
+        </section>
+
+        <section class="video-grid-section">
+            <h2>Video Demonstrations</h2>
+            <div class="video-grid">
+                <!-- Video 1 -->
+                <div class="video-item">
+                    <video class="project-detail-video" controls autoplay muted loop>
+                        <source src="images/videos/pathtracking.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">
+                        Forward path tracking phase where the drone locks onto and follows the visual guide line.
+                    </p>
+                </div>
+                <!-- Video 2 -->
+                <div class="video-item">
+                    <video class="project-detail-video" controls autoplay muted loop>
+                        <source src="images/videos/landing.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p class="video-caption">
+                        Timed landing on moving platform using Stateflow logic and real-time position correction.
+                    </p>
+                </div>
+            </div>
+        </section>
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://github.com/DheerajCNV/Vision-Based-Precision-Landing-on-a-Moving-Platform" class="btn btn-outline" target="_blank">View on GitHub</a>
+      <a href="pdfs/minidrone.pdf" class="btn btn-outline" target="_blank">Report</a>
+    </div>
+  </main>
+
+  <footer style="background-color: var(--bg-secondary); padding: 2rem 5%; text-align: center;">
+    <div class="social-links">
+      <a href="mailto:dheerajcnv@gmail.com" class="social-link" aria-label="Email" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/DheerajCNV" class="social-link" aria-label="GitHub" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/dheerajcnv" class="social-link" aria-label="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <p class="footer-text">© 2025 Dheeraj Chilukuri. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
