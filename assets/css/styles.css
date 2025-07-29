@@ -280,7 +280,16 @@ header {
 
 .project-links {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.project-links a {
+  flex: 1 1 120px;
+  max-width: 48%;
+  text-align: center;
 }
 
 .btn {
@@ -350,7 +359,7 @@ footer {
 }
 
 /* Responsive styles */
-@media (max-width: 768px) {
+@media (max-width: 480px) {
   .hero {
     padding-top: 8rem;
     text-align: center;
@@ -376,7 +385,7 @@ footer {
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .projects-grid {
@@ -714,4 +723,16 @@ footer {
   margin-top: 1rem;
   font-size: 0.95rem;
   color: var(--text-secondary);
+}
+
+.hero-title h1 {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  font-size: clamp(2rem, 6vw, 3.5rem); /* responsive sizing */
+  text-align: center;
+}
+
+.hero-title {
+  padding: 1rem;
+  max-width: 100%;
 }
