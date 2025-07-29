@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Multi-Robot Swarm for Search and Rescue in Disaster Zones</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links animate-nav">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Back to Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="project-detail" style="padding: 8rem 5% 5rem; background-color: var(--bg-primary); color: var(--text-primary);">
+    <h1 class="section-title">Multi-Robot Swarm for Search and Rescue in Disaster Zones</h1>
+    <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem;">
+      Designed and simulated a decentralized multi-robot swarm using MATLAB to autonomously navigate, search, and relay data in dynamic disaster zones. The project combines Voronoi-based partitioning, repulsive field navigation, and energy-aware planning to create a scalable, robust system suitable for search and rescue missions in uncertain and hazardous environments.
+    </p>
+
+    <section style="max-width: 800px; margin: 2rem auto;">
+      <h2>1. Distributed Coordination and Area Coverage</h2>
+      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>Simulated a swarm of 20 robots in a 200×200 m environment with 5 dynamically expanding hazard zones.</li>
+        <li>Implemented Voronoi partitioning for efficient area allocation and collision-free navigation.</li>
+        <li>Enabled autonomous local decision-making using distributed control with no centralized controller.</li>
+        <li>Achieved over 95% total area coverage within 250 steps under tight communication and sensing constraints.</li>
+      </ul>
+    </section>
+
+    <section style="max-width: 800px; margin: 2rem auto;">
+      <h2>2. Hazard Avoidance and Adaptive Behavior</h2>
+      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>Modeled disaster zones as growing repulsive fields, with each robot adjusting paths in real time to maintain safety.</li>
+        <li>Used local sensors and gradient-based repulsion logic to detect and steer clear of expanding hazards.</li>
+        <li>Validated performance through disaster heatmaps and real-time trajectory visualizations.</li>
+      </ul>
+    </section>
+
+    <section style="max-width: 800px; margin: 2rem auto;">
+      <h2>3. Energy-Aware Motion Planning</h2>
+      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>Developed a control algorithm prioritizing coverage and efficiency, with energy depletion modeled per time step.</li>
+        <li>Robots retained over 80% of energy by the end of the mission through optimized path planning and task allocation.</li>
+        <li>Ensured longer mission lifetimes without recharging, ideal for real-world deployments.</li>
+      </ul>
+    </section>
+
+    <section style="max-width: 800px; margin: 2rem auto;">
+      <h2>4. Results and Applications</h2>
+      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>Demonstrated strong coverage, safe hazard avoidance, and energy conservation in a simulated post-earthquake urban setting.</li>
+        <li>Scalable to larger swarms or heterogeneous systems (e.g., drones, ground robots).</li>
+        <li>Applications include search and rescue, environmental monitoring, battlefield reconnaissance, and planetary exploration.</li>
+      </ul>
+    </section>
+    
+    <section class="video-grid-section">
+      <h2>Simulation Visualizations</h2>
+      <div class="video-grid">
+        <div class="video-item">
+            <video class="project-detail-video" controls autoplay muted loop style="width: 100%; max-width: 960px; height: auto; display: block; margin: 0 auto;">
+                <source src="images/videos/simulation.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+          <p class="video-caption">Swarm behavior navigating dynamic hazard zones.</p>
+        </div>
+      </div>
+    </section>
+
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://github.com/DheerajCNV/Mutli-robot-swarm-for-search-and-rescue-in-disaster-zones" class="btn btn-outline" target="_blank">View on GitHub</a>
+      <a href="https://github.com/DheerajCNV/Mutli-robot-swarm-for-search-and-rescue-in-disaster-zones/blob/main/Report.pdf" class="btn btn-outline" target="_blank">Report</a>
+    </div>
+  </main>
+
+  <footer style="background-color: var(--bg-secondary); padding: 2rem 5%; text-align: center;">
+    <div class="social-links">
+      <a href="mailto:dheerajcnv@gmail.com" class="social-link" aria-label="Email" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/DheerajCNV" class="social-link" aria-label="GitHub" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/dheerajcnv" class="social-link" aria-label="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <p class="footer-text">© 2025 Dheeraj Chilukuri. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
