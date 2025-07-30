@@ -27,22 +27,53 @@ window.addEventListener('scroll', function() {
     : (document.body.classList.contains('dark-mode')
       ? '0 2px 5px rgba(0, 0, 0, 0.3)'
       : '0 2px 5px rgba(0, 0, 0, 0.1)');
-});
+}, { passive: true }); // ADDED: This option improves scroll responsiveness
 
-// Scroll fade-in animation for .fade-in-left and .fade-in-right
-const faders = document.querySelectorAll('.fade-in-left, .fade-in-right');
+// ---- OBSERVER 1: For triggering animations ----
+// This observer adds the 'visible' class to animate sections every time they appear on screen.
+const sectionsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
-const appearOnScroll = new IntersectionObserver((entries) => {
+const animationObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
+    // This will add the .visible class when the element is intersecting (on-screen)
+    // and remove it when it's not, allowing the animation to replay.
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     } else {
       entry.target.classList.remove('visible');
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.1 }); // Triggers when 10% of the section is visible
 
-faders.forEach(el => appearOnScroll.observe(el));
+sectionsToAnimate.forEach(section => {
+  animationObserver.observe(section);
+});
+
+// ---- OBSERVER 2: For highlighting the active nav link ----
+// This observer detects which section is in the middle of the viewport and applies
+// the 'active' class to the corresponding navigation link.
+const navItems = document.querySelectorAll('.nav-links a'); // RENAMED from navLinks
+const sectionsForNav = document.querySelectorAll('section[id]');
+
+const navObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const sectionId = entry.target.getAttribute('id');
+
+      navItems.forEach(link => { // UPDATED to use navItems
+        link.classList.remove('active');
+        // Check if the link's href matches the intersecting section's id
+        if (link.getAttribute('href') === `#${sectionId}`) {
+          link.classList.add('active');
+        }
+      });
+    }
+  });
+}, { rootMargin: '-40% 0px -60% 0px' });
+
+sectionsForNav.forEach(section => {
+  navObserver.observe(section);
+});
 
 // Typewriter effect for name
 document.addEventListener("DOMContentLoaded", () => {
@@ -102,5 +133,28 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
     const description = button.previousElementSibling;
     description.classList.toggle('expanded');
     button.textContent = description.classList.contains('expanded') ? 'Read less' : 'Read more';
+  });
+});
+
+
+
+// --- ADD THIS TO THE END OF script.js ---
+
+// Back to Top Button Logic
+const backToTopButton = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) { // Show button after scrolling 300px
+    backToTopButton.classList.add('visible');
+  } else {
+    backToTopButton.classList.remove('visible');
+  }
+}, { passive: true });
+
+backToTopButton.addEventListener('click', (e) => {
+  e.preventDefault();
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
   });
 });

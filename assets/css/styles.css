@@ -10,7 +10,7 @@ html, body {
   width: 100%;
   overflow-x: hidden;
   box-sizing: border-box;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; /* This is already correctly set for smooth scrolling */
 }
 
 :root {
@@ -18,7 +18,7 @@ html, body {
   --bg-secondary: #1e1e1e;
   --bg-accent: #252525;
   --text-primary: #f5f5f5;
-  --text-secondary: #b3b3b3;
+  --text-secondary: #d4d4d4;
   --accent-color: #3291ff;
   --accent-hover: #0070f3;
   --card-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -467,26 +467,6 @@ footer {
   flex-wrap: wrap;
 }
 
-/* Fade-In Scroll Animations */
-.fade-in-left, .fade-in-right {
-  opacity: 0;
-  transform: translateX(40px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in-left {
-  transform: translateX(-40px);
-}
-
-.fade-in-right {
-  transform: translateX(40px);
-}
-
-.visible {
-  opacity: 1 !important;
-  transform: translate(0) !important;
-}
-
 /*scoial links*/
 .social-links {
   display: flex;
@@ -735,4 +715,76 @@ footer {
 .hero-title {
   padding: 1rem;
   max-width: 100%;
+}
+
+
+/* ==== NEW ANIMATION STYLES ==== */
+
+/* Initial state for the animation */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* --- Choose ONE transform style --- */
+
+/* Style 1: Smooth Slide Up */
+/*
+.animate-on-scroll {
+  transform: translateY(30px);
+}
+*/
+
+/* Style 2: Gentle Scale In */
+
+.animate-on-scroll {
+  transform: scale(0.95);
+  will-change: transform, opacity; /* ADDED: This boosts performance */
+}
+
+
+/* Final state (when the 'visible' class is added by JavaScript) */
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: scale(1); /* or transform: scale(1); */
+}
+
+
+/* Style for the active navigation link */
+.nav-links a.active {
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: var(--accent-color);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+  z-index: 1000;
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background-color: var(--accent-hover);
 }
