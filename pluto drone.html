@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remote Programming Pluto 1.2 Drone</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links animate-nav">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#projects">Back to Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Project Content -->
+  <main class="project-detail" style="padding: 8rem 5% 5rem; background-color: var(--bg-primary); color: var(--text-primary);">
+    
+    <h1 class="section-title">Remote Programming Pluto Nano Drone</h1>
+    <p style="color: var(--text-secondary); max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem;">
+      As part of <strong>Inter IIT Tech Meet 11.0</strong>, I embarked on an exciting project to program India’s best-selling educational nano drone, <strong>Pluto</strong>. 
+      The primary objective was to remove dependency on mobile applications by developing a Python-based control interface, while also exploring autonomous flight 
+      using <strong>ArUco tags</strong> and <strong>PID controllers</strong>. This project provided hands-on experience in drone communication protocols, real-time control, 
+      and vision-based navigation.
+    </p>
+
+    <!-- Task 1 -->
+    <section style="max-width: 800px; margin: 2rem auto;">
+      <h2>1. Python Wrapper for Pluto Drone</h2>
+      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>Investigated Pluto’s <strong>ROS package</strong> and <strong>MSP (MultiWii Serial Protocol)</strong> to understand its communication backbone.</li>
+        <li>Designed and implemented a Python wrapper allowing direct commands for pitch, roll, throttle, take-off, and landing from both Linux and Windows platforms.</li>
+        <li>Conducted successful test flights where the drone responded in real time to Python scripts, validating the wrapper’s effectiveness and enabling software-driven control.</li>
+      </ul>
+    </section>
+
+    <!-- Task 2 -->
+    <section style="max-width: 800px; margin: 2rem auto;">
+      <h2>2. Autonomous Flight with ArUco Tags</h2>
+      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>Generated and mounted <strong>ArUco markers</strong> on Pluto to enable precise position tracking using computer vision.</li>
+        <li>Implemented a <strong>PID controller</strong> to achieve stable altitude hold and smooth hovering.</li>
+        <li>Extended the control logic to autonomously trace a <strong>1 × 2 m rectangular trajectory</strong>, demonstrating structured path-following flight in real-world conditions.</li>
+      </ul>
+    </section>
+
+    <!-- Reflection -->
+    <section style="max-width: 800px; margin: 2rem auto;">
+      <h2>3. Key Learnings & Impact</h2>
+      <ul style="list-style: disc; padding-left: 1.5rem; color: var(--text-secondary);">
+        <li>Gained hands-on expertise in low-level drone communication, real-time control loops, and tuning PID controllers for stability.</li>
+        <li>Learned to integrate computer vision-based localization with flight dynamics, converting visual feedback into actionable control signals.</li>
+        <li>Showcased the potential of accessible nano drones for research, education, swarm robotics, and autonomous aerial systems.</li>
+        <li>Beyond technical skills, the project was an exploration in problem-solving, evolving a simple idea into a fully functional autonomous prototype.</li>
+      </ul>
+    </section>
+
+    <!-- Links -->
+    <div style="text-align: center; margin-top: 2rem;">
+      <a href="https://github.com/DheerajCNV/Drona-Aviation-Pluto-Drone-Swarm-Challenge" class="btn btn-outline" target="_blank">View on GitHub</a>
+      <!-- Optional Report Link -->
+      <!-- <a href="pdfs/pluto_drone_report.pdf" class="btn btn-outline" target="_blank">Report</a> -->
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer style="background-color: var(--bg-secondary); padding: 2rem 5%; text-align: center;">
+    <div class="social-links">
+      <a href="mailto:dheerajcnv@gmail.com" class="social-link" aria-label="Email" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://github.com/DheerajCNV" class="social-link" aria-label="GitHub" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com/in/dheerajcnv" class="social-link" aria-label="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+    </div>
+    <p class="footer-text">© 2025 Dheeraj Chilukuri. All rights reserved.</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
