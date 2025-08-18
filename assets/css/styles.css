@@ -822,7 +822,7 @@ footer {
 }
 
 
-/* --- Coursework Section (Single Card Layout) --- */
+/* --- Coursework Section (Corrected Single Card Layout) --- */
 .coursework-section {
   padding: 5rem 2rem;
   background-color: var(--bg-accent);
@@ -835,21 +835,19 @@ footer {
   border-radius: 10px;
   box-shadow: var(--card-shadow);
   overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns for desktop */
 }
 
-.coursework-card-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background-color: var(--bg-secondary);
-  text-align: center;
+.coursework-column-group:first-child {
+  border-right: 1px solid var(--bg-accent);
 }
 
 .coursework-title {
   padding: 1rem;
-}
-
-.coursework-title:first-child {
-  border-right: 1px solid var(--bg-accent);
+  background-color: var(--bg-secondary);
+  text-align: center;
+  border-bottom: 1px solid var(--bg-accent);
 }
 
 .coursework-title h3 {
@@ -864,17 +862,8 @@ footer {
   color: var(--text-secondary);
 }
 
-.coursework-card-body {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-
-.coursework-body-column {
+.coursework-body-content {
   padding: 1.5rem;
-}
-
-.coursework-body-column:first-child {
-  border-right: 1px solid var(--bg-accent);
 }
 
 .semester-title {
@@ -891,6 +880,10 @@ footer {
   list-style-type: none;
   padding-left: 0;
   margin: 0;
+}
+
+.semester-block:not(:last-child) {
+    margin-bottom: 1.5rem;
 }
 
 .coursework-card li {
@@ -911,14 +904,13 @@ footer {
 
 /* Responsive adjustments for the single card */
 @media (max-width: 768px) {
-  .coursework-card-header,
-  .coursework-card-body {
+  .coursework-card {
     grid-template-columns: 1fr; /* Stack columns on smaller screens */
   }
 
-  .coursework-title:first-child,
-  .coursework-body-column:first-child {
+  .coursework-column-group:first-child {
     border-right: none;
     border-bottom: 1px solid var(--bg-accent);
   }
 }
+
