@@ -136,10 +136,6 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
   });
 });
 
-
-
-// --- ADD THIS TO THE END OF script.js ---
-
 // Back to Top Button Logic
 const backToTopButton = document.querySelector('.back-to-top');
 
@@ -156,5 +152,69 @@ backToTopButton.addEventListener('click', (e) => {
   window.scrollTo({
     top: 0,
     behavior: 'smooth'
+  });
+});
+
+// --- Lightbox Functionality ---
+document.addEventListener('DOMContentLoaded', () => {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.querySelector('.lightbox-close');
+  const prevBtn = document.querySelector('.lightbox-prev');
+  const nextBtn = document.querySelector('.lightbox-next');
+
+  // Find all images in the photo grid
+  const galleryImages = document.querySelectorAll('.photo-grid .photo-item img');
+  let currentIndex = 0;
+
+  function showImage(index) {
+    if (index >= galleryImages.length) {
+      currentIndex = 0;
+    } else if (index < 0) {
+      currentIndex = galleryImages.length - 1;
+    } else {
+      currentIndex = index;
+    }
+    const imgSrc = galleryImages[currentIndex].src;
+    lightboxImg.src = imgSrc;
+    lightbox.classList.add('active');
+  }
+
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      showImage(index);
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+  });
+
+  prevBtn.addEventListener('click', () => {
+    showImage(currentIndex - 1);
+  });
+
+  nextBtn.addEventListener('click', () => {
+    showImage(currentIndex + 1);
+  });
+
+  // Close lightbox if user clicks outside of the image
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+    }
+  });
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.classList.contains('active')) {
+      if (e.key === 'ArrowLeft') {
+        showImage(currentIndex - 1);
+      } else if (e.key === 'ArrowRight') {
+        showImage(currentIndex + 1);
+      } else if (e.key === 'Escape') {
+        lightbox.classList.remove('active');
+      }
+    }
   });
 });
