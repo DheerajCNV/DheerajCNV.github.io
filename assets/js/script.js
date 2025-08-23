@@ -218,3 +218,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
+
+window.addEventListener('scroll', function() {
+    const heroSection = document.querySelector('.hero');
+    // Get the scroll position
+    const scrollPosition = window.pageYOffset;
+
+    // Calculate opacity. The hero will be fully faded out after 600px of scrolling.
+    // You can change '600' to a larger or smaller number to make the fade effect
+    // happen faster or slower.
+    const opacityValue = 1 - (scrollPosition / 600);
+
+    // We use Math.max(0, opacityValue) to ensure the opacity doesn't go below 0
+    heroSection.style.opacity = Math.max(0, opacityValue);
+});

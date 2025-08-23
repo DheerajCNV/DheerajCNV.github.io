@@ -81,7 +81,7 @@ header {
   color: white;
 }
 
-/* Hero section */
+/* Hero section 
 .hero {
   position: relative;
   background-color: var(--bg-secondary);
@@ -90,6 +90,22 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
+}*/
+
+.hero {
+  /* position: relative;  <-- This line is removed */
+  background-color: var(--bg-secondary);
+  padding-top: 6rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* ADD THESE LINES FOR THE STICKY EFFECT */
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0;
+  z-index: 1; /* Puts the hero in the layering context */
 }
 
 .hero-content {
@@ -1017,8 +1033,8 @@ footer {
 
 /* Zoom-in animation with delay */
 .lightbox-content {
-  animation: zoom-in 0.3s ease-out 0.25s; /* animation-name, duration, timing-function, delay */
-  animation-fill-mode: backwards; /* Ensures the initial state is applied before the delay */
+  animation: zoom-in 0.25s ease-out; /* faster, no delay */
+  animation-fill-mode: forwards; /* keeps final state applied */
 }
 
 @keyframes zoom-in {
@@ -1080,4 +1096,11 @@ footer {
 .lightbox-prev:hover,
 .lightbox-next:hover {
   background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* --- ADD THIS NEW RULE TO YOUR CSS FILE --- */
+.main-content {
+    position: relative;
+    z-index: 2; /* This ensures it scrolls ON TOP of the hero */
+    background-color: var(--bg-primary); /* Your main site background */
 }
