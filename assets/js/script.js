@@ -30,39 +30,32 @@ window.addEventListener('scroll', function() {
 }, { passive: true }); // ADDED: This option improves scroll responsiveness
 
 // ---- OBSERVER 1: For triggering animations ----
-// This observer adds the 'visible' class to animate sections every time they appear on screen.
 const sectionsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
 const animationObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-    // This will add the .visible class when the element is intersecting (on-screen)
-    // and remove it when it's not, allowing the animation to replay.
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
     } else {
       entry.target.classList.remove('visible');
     }
   });
-}, { threshold: 0.1 }); // Triggers when 10% of the section is visible
+}, { threshold: 0.1 });
 
 sectionsToAnimate.forEach(section => {
   animationObserver.observe(section);
 });
 
 // ---- OBSERVER 2: For highlighting the active nav link ----
-// This observer detects which section is in the middle of the viewport and applies
-// the 'active' class to the corresponding navigation link.
-const navItems = document.querySelectorAll('.nav-links a'); // RENAMED from navLinks
+const navItems = document.querySelectorAll('.nav-links a');
 const sectionsForNav = document.querySelectorAll('section[id]');
 
 const navObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const sectionId = entry.target.getAttribute('id');
-
-      navItems.forEach(link => { // UPDATED to use navItems
+      navItems.forEach(link => {
         link.classList.remove('active');
-        // Check if the link's href matches the intersecting section's id
         if (link.getAttribute('href') === `#${sectionId}`) {
           link.classList.add('active');
         }
@@ -117,16 +110,6 @@ document.querySelectorAll('.company-logo').forEach(logo => {
   });
 });
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
-  });
-});
-
 //Read more/less button for project descriptions
 document.querySelectorAll('.read-more-btn').forEach(button => {
   button.addEventListener('click', () => {
@@ -140,7 +123,7 @@ document.querySelectorAll('.read-more-btn').forEach(button => {
 const backToTopButton = document.querySelector('.back-to-top');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) { // Show button after scrolling 300px
+  if (window.scrollY > 300) {
     backToTopButton.classList.add('visible');
   } else {
     backToTopButton.classList.remove('visible');
@@ -162,8 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeBtn = document.querySelector('.lightbox-close');
   const prevBtn = document.querySelector('.lightbox-prev');
   const nextBtn = document.querySelector('.lightbox-next');
-
-  // Find all images in the photo grid
   const galleryImages = document.querySelectorAll('.photo-grid .photo-item img');
   let currentIndex = 0;
 
@@ -198,14 +179,12 @@ document.addEventListener('DOMContentLoaded', () => {
     showImage(currentIndex + 1);
   });
 
-  // Close lightbox if user clicks outside of the image
   lightbox.addEventListener('click', (e) => {
     if (e.target === lightbox) {
       lightbox.classList.remove('active');
     }
   });
 
-  // Keyboard navigation
   document.addEventListener('keydown', (e) => {
     if (lightbox.classList.contains('active')) {
       if (e.key === 'ArrowLeft') {
@@ -219,17 +198,81 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-
+// Hero Section Fade on Scroll
 window.addEventListener('scroll', function() {
     const heroSection = document.querySelector('.hero');
-    // Get the scroll position
     const scrollPosition = window.pageYOffset;
-
-    // Calculate opacity. The hero will be fully faded out after 600px of scrolling.
-    // You can change '600' to a larger or smaller number to make the fade effect
-    // happen faster or slower.
     const opacityValue = 1 - (scrollPosition / 600);
-
-    // We use Math.max(0, opacityValue) to ensure the opacity doesn't go below 0
     heroSection.style.opacity = Math.max(0, opacityValue);
+});
+
+// --- NEW: Interactive Mouse-Follow Light Effect ---
+document.body.addEventListener('mousemove', (e) => {
+  document.documentElement.style.setProperty('--mouse-x', `${e.clientX}px`);
+  document.documentElement.style.setProperty('--mouse-y', `${e.clientY}px`);
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById("tsparticles")) {
+    tsParticles.load("tsparticles", {
+      fpsLimit: 60,
+      background: {
+        color: "transparent" // Matches your --bg-primary color
+      },
+      interactivity: {
+        events: {
+          onHover: {
+            enable: true,
+            mode: "repulse"
+          },
+          resize: true
+        },
+        modes: {
+          repulse: {
+            distance: 80,
+            duration: 0.4
+          }
+        }
+      },
+      particles: {
+        color: {
+          value: "#ffffff"
+        },
+        links: {
+          color: "#ffffff",
+          distance: 150,
+          enable: true,
+          opacity: 0.1,
+          width: 1
+        },
+        collisions: {
+          enable: true
+        },
+        move: {
+          direction: "none",
+          enable: true,
+          outModes: "out",
+          random: false,
+          speed: 1,
+          straight: false
+        },
+        number: {
+          density: {
+            enable: true,
+            area: 800
+          },
+          value: 80
+        },
+        opacity: {
+          value: 0.2
+        },
+        shape: {
+          type: "circle"
+        },
+        size: {
+          value: { min: 1, max: 3 }
+        }
+      }
+    });
+  }
 });

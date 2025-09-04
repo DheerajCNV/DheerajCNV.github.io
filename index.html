@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <!-- Header -->
+  <div id="tsparticles"></div>
+  <div class="background-glow"></div>
+
   <header>
     <nav class="navbar">
       <ul class="nav-links animate-nav">
@@ -18,7 +20,7 @@
           <li><a href="#experience">Experience</a></li>
           <li><a href="#skills">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#courses">Courses</a></li>
+          <li><a href="#coursework">Courses</a></li>
           <li><a href="#contact" class="nav-link">Contact</a></li>
       </ul>
       <div class="menu-toggle">
@@ -32,7 +34,6 @@
     </nav>
   </header>
 
-<!-- Hero Section -->
 <section id="home" class="hero">
   <div class="hero-content">
     <div class="hero-text animate-on-scroll">
@@ -51,21 +52,13 @@
         </a>
       </div>
     </div>
-    <!--<div class="hero-image animate-on-scroll">
-      <a href="index.html">
-        <img src="images/IMG_0794.jpg" alt="Profile Image" class="rounded-image" />
-      </a>
-    </div>-->
-  </div>
+    </div>
 </section>
 
 <main class="main-content">
 
-  <!-- Profile Snapshot Section -->
   <section id="profile-snapshot" class="profile-snapshot animate-on-scroll">
-    <!--<h2 class="section-title">Profile Snapshot</h2> -->
     <div class="snapshot-grid">
-      <!-- Academic Background -->
       <div class="snapshot-card">
         <i class="fas fa-graduation-cap snapshot-icon"></i>
         <p>MS in Robotics and Autonomous Systems<br>
@@ -73,7 +66,6 @@
           Arizona State University,AZ, USA</p>
       </div>
 
-      <!-- What Drives Me -->
       <div class="snapshot-card">
         <i class="fas fa-bolt snapshot-icon"></i>
         <h3>What Drives Me</h3>
@@ -81,7 +73,6 @@
           adapt in the real world.</p>
       </div>
 
-      <!-- Undergraduate -->
       <div class="snapshot-card">
         <i class="fas fa-graduation-cap snapshot-icon"></i>
         <p>B.Tech in Mechanical Engineering<br>
@@ -91,12 +82,10 @@
     </div>
   </section>
 
-  <!-- Experience Section -->
   <section id="experience" class="experience-section animate-on-scroll">
     <h2 class="section-title">Experience</h2>
     <div class="projects-grid">
 
-      <!-- Experience Card 1 -->
       <div class="project-card">
         <div class="project-info">
           <div class="logo-title-container">
@@ -112,16 +101,9 @@
             <li>Support course delivery through preparation of assignments, solutions, and exam materials, while
               addressing student inquiries via email and Canvas.</li>
           </ul>
-          <!--<div class="project-tags">
-            <span class="project-tag">Hyperspectral Imaging</span>
-            <span class="project-tag">Machine Learning</span>
-            <span class="project-tag">3D-printing</span>
-            <span class="project-tag">Prototyping</span>
-          </div>-->
-        </div>
+          </div>
       </div>
 
-      <!-- Experience Card 1 -->
       <div class="project-card">
         <div class="project-info">
           <div class="logo-title-container">
@@ -150,7 +132,6 @@
         </div>
       </div>
 
-      <!-- Experience Card 2 -->
       <div class="project-card">
         <div class="project-info">
           <div class="logo-title-container">
@@ -180,7 +161,6 @@
     </div>
   </section>
 
-  <!-- Skills Section -->
   <section id="skills" class="skills-section animate-on-scroll">
     <h2 class="section-title">Skills</h2>
     <div class="skills-container">
@@ -211,12 +191,9 @@
     </div>
   </section>
 
-  <!-- Projects Section -->
   <section id="projects" class="projects animate-on-scroll">
     <h2 class="section-title">Projects</h2>
-    <!--<h2 class="section-title">Under Construction</h2>-->
     <div class="projects-grid">
-      <!-- Project 1 -->
       <div class="project-card">
         <div class="project-image">
           <img src="images/rmvsnet.png" alt="Project 1">
@@ -248,7 +225,6 @@
         </div>
       </div>
 
-      <!-- Project 2-->
       <div class="project-card">
         <div class="project-image">
           <img src="images/vision based landing.png" alt="Project 2">
@@ -281,7 +257,6 @@
       </div>
 
 
-      <!-- Project 3 -->
       <div class="project-card">
         <div class="project-image">
           <img src="images/roboticarm.png" alt="Project 1">
@@ -305,14 +280,10 @@
             <a href="pdfs/4dofroboticarm.pdf" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
               Learn more
             </a>
-            <!--<a href="https://github.com/DheerajCNV/Unstructured-Multi-View-Stereo-using-R-MVSNet" class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>-->
-          </div>
+            </div>
         </div>
       </div>
 
-      <!-- Project 4-->
       <div class="project-card">
         <div class="project-image">
           <img src="images/stella.jpg" alt="Project 4">
@@ -346,7 +317,6 @@
         </div>
       </div>
 
-      <!-- Project 5-->
       <div class="project-card">
         <div class="project-image">
           <img src="images/disaster zone.png" alt="Project 5">
@@ -379,10 +349,40 @@
         </div>
       </div>
 
-      <!-- Project 6-->
       <div class="project-card">
         <div class="project-image">
-          <img src="images/PlutoX-ortho-view.png" alt="Project 6">
+          <img src="images/mutliprismaticarm.jpg" alt="Project 6">
+        </div>
+        <div class="project-info">
+          <h3>Dynamic Modeling and Control of a Multi - Prismatic Robotics Arm</h3>
+          <p class="project-description">
+            Developed a MATLAB-based multi-prismatic robotic system with indirect force control using compliance and
+            impedance strategies. Implemented governing equations for dynamic analysis and built an interactive GUI to
+            visualize joint states, end-effector forces, and enable real-time parameter tuning.
+          </p>
+          <button class="read-more-btn">Read more</button>
+          <div class="project-tags">
+            <span class="project-tag">MATLAB</span>
+            <span class="project-tag">Robotics Control</span>
+            <span class="project-tag">Impedance Control</span>
+            <span class="project-tag">GUI</span>
+          </div>
+          <div class="project-links">
+            <a href="mutli-prismatic.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
+              Learn more
+            </a>
+            <a href="https://github.com/DheerajCNV/Dynamic-Modeling-and-Control-of-a-Multi-Prismatic-Robotics-System"
+              class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="project-card">
+        <div class="project-image">
+          <img src="images/PlutoX-ortho-view.png" alt="Project 7">
         </div>
         <div class="project-info">
           <h3>Remote Programming Pluto 1.2 Nano Drone</h3>
@@ -412,42 +412,9 @@
         </div>
       </div>
 
-      <!-- Project 7-->
-      <div class="project-card">
-        <div class="project-image">
-          <img src="images/mutliprismaticarm.jpg" alt="Project 7">
-        </div>
-        <div class="project-info">
-          <h3>Dynamic Modeling and Control of a Multi - Prismatic Robotics Arm</h3>
-          <p class="project-description">
-            Developed a MATLAB-based multi-prismatic robotic system with indirect force control using compliance and
-            impedance strategies. Implemented governing equations for dynamic analysis and built an interactive GUI to
-            visualize joint states, end-effector forces, and enable real-time parameter tuning.
-          </p>
-          <button class="read-more-btn">Read more</button>
-          <div class="project-tags">
-            <span class="project-tag">MATLAB</span>
-            <span class="project-tag">Robotics Control</span>
-            <span class="project-tag">Impedance Control</span>
-            <span class="project-tag">GUI</span>
-          </div>
-          <div class="project-links">
-            <a href="mutli-prismatic.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">
-              Learn more
-            </a>
-            <a href="https://github.com/DheerajCNV/Dynamic-Modeling-and-Control-of-a-Multi-Prismatic-Robotics-System"
-              class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-
-
     </div>
   </section>
 
-  <!-- Courses Section -->
   <section id="coursework" class="coursework-section animate-on-scroll">
     <h2 class="section-title">Coursework & Certifications</h2>
     <div class="coursework-card">
@@ -533,7 +500,6 @@
 
 </main>
 
-  <!-- Footer -->
   <footer id="contact">
     <h2 class="section-title">Contact</h2>
   <div class="footer-content">
@@ -552,10 +518,11 @@
   </div>
 </footer>
 
-  <!-- Back to Top Button -->
   <a href="#" class="back-to-top" aria-label="Back to top">
     <i class="fas fa-arrow-up"></i>
   </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
 
   <script src="assets/js/script.js"></script>
 
@@ -568,4 +535,3 @@
 
 </body>
 </html>
-
