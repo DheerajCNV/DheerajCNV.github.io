@@ -64,21 +64,43 @@ header {
   left: 0;
   width: 100%;
   z-index: 999;
-  /* background-color is now on .navbar */
-  box-shadow: var(--header-shadow);
+  pointer-events: none; /* Allows clicks to pass through the empty header space */
+  background: transparent; /* Ensure no background here */
+  box-shadow: none; /* Shadow is now on the .navbar itself */
 }
 
-/* --- UPDATED: Navbar with Glass Effect --- */
+/* Re-enable pointer events for the navbar links */
+.navbar {
+  pointer-events: auto;
+}
+
+/* ---Navbar with Glass Effect --- */
 .navbar {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0;
   
-  /* UPDATED STYLES */
-  background-color: transparent; /* Makes the navbar see-through */
-  backdrop-filter: none; /* Removes the blur effect */
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Keeps a faint line for separation */
+  /* 1. Size and Position */
+  width: 90%;            /* Responsive width */
+  max-width: 900px;      /* Maximum stretch on desktop */
+  margin: 1.5rem auto;   /* Centers horizontally and adds space from the top */
+  padding: 0.8rem 2rem;  /* Internal spacing */
+  pointer-events: auto; /* Re-enables clicks for the navbar links */
+  
+  /* 2. Glassmorphism Effect */
+  background-color: rgba(18, 18, 18, 0.7); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  
+  /* 3. Shape and Border */
+  border-radius: 50px;   /* Creates the capsule/pill shape */
+  border: 1px solid rgba(255, 255, 255, 0.1); 
+  
+  /* 4. Shadow for Depth */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  
+  /* Ensure it stays fixed while scrolling */
+  transition: all 0.3s ease;
 }
 
 .nav-links {
@@ -145,7 +167,6 @@ header {
   overflow-wrap: normal;
 }
 
-/* ... other hero styles ... */
 
 #typewriter-name {
   display: inline-block;
@@ -155,7 +176,7 @@ header {
   overflow: hidden;
   animation: blink 0.75s step-end infinite;
   color: var(--accent-color);
-  vertical-align: bottom; /* ADD THIS LINE */
+  vertical-align: bottom; 
 }
 
 @keyframes blink {
@@ -193,8 +214,7 @@ header {
   color: var(--text-primary);
 }
 
-/* --- NEW: Glassmorphism Card Base Styles --- */
-/* This rule applies the glass effect to all card types */
+/* ---Glassmorphism Card Base Styles --- */
 .project-card,
 .snapshot-card,
 .coursework-card {
@@ -215,7 +235,7 @@ header {
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* --- NEW: Card Hover Glow Effect --- */
+/* ---Card Hover Glow Effect --- */
 .project-card:hover,
 .snapshot-card:hover,
 .coursework-card:hover {
@@ -240,7 +260,6 @@ header {
   margin-top: 2rem;
 }
 
-/* --- UPDATED: Skill Tags with Shiny Effect --- */
 .skill {
   background-color: var(--bg-accent);
   padding: 0.6rem 1.2rem;
@@ -262,7 +281,6 @@ header {
 /* Projects */
 .projects {
   padding: 5rem 5rem;
-  /* background-color is now handled by .main-content */
 }
 
 .projects-grid {
@@ -276,11 +294,8 @@ header {
 
 .project-card {
   width: 100%;
-  /* Base styles moved to the combined rule */
 }
 
-/* All other existing styles from your file continue below... */
-/* For example: */
 .project-image {
   aspect-ratio: 1 / 1;
   width: 100%;
@@ -299,7 +314,6 @@ header {
   padding: 1.5rem;
 }
 
-/* ... and so on, keeping the rest of your file as it was. The code below is the rest of your original file */
 .project-info h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
@@ -423,8 +437,6 @@ footer {
 }
 
 
-/* All other specific and responsive styles remain below... */
-/* ... a large portion of your original CSS file is unchanged ... */
 .experience-section .projects-grid {
   display: flex;
   justify-content: center;
@@ -789,7 +801,7 @@ footer {
   z-index: -2; /* Places it behind all content and the glow effect */
 }
 
-/* --- NEW: Universal Project Detail Page Styles --- */
+/* ---Universal Project Detail Page Styles --- */
 
 /* Main glass container for the entire page content */
 .project-detail {
@@ -854,7 +866,7 @@ footer {
   text-align: center;
 }
 
-/* --- NEW: Hover effect for project detail card --- */
+/* --- Hover effect for project detail card --- */
 .project-detail:hover {
   transform: translateY(-5px); /* Optional: lifts the card slightly */
   border-color: rgba(50, 145, 255, 0.5);
@@ -874,4 +886,109 @@ body {
   top: 0;
   left: 0;
   z-index: 0; /* Changed from -2 to 0 */
+}
+
+/* Mobile Adjustments for Floating Navbar */
+@media (max-width: 480px) {
+  .navbar {
+    width: 95%;            /* Take up more horizontal space on mobile */
+    margin: 0.8rem auto;   /* Closer to the top of the screen */
+    padding: 0.6rem 1.2rem; 
+    border-radius: 20px;   
+    justify-content: space-between; /* Space between logo/text and toggle */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: absolute;
+    top: 70px;             /* Positioned right below the floating bar */
+    left: 2.5%;            /* Centers the dropdown relative to the 95% width */
+    width: 95%;
+    
+    /* Mobile Glass Effect */
+    background-color: rgba(30, 30, 30, 0.95); 
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    
+    border-radius: 15px;   
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    display: none;         /* Hidden by default; toggled by your script.js */
+  }
+
+  .nav-links.active {
+    display: flex; /* Shown when menu-toggle is clicked */
+  }
+
+  .menu-toggle {
+    display: block; /* Ensure the hamburger icon is visible */
+  }
+}
+
+/* Performance optimization for glass and fixed elements */
+.navbar, .project-card, .snapshot-card, .coursework-card, .project-detail {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Ensure the main content doesn't trigger unnecessary repaints */
+.main-content {
+  contain: padding;
+}
+
+/* --- Categorized Skills Grid --- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding: 0 1rem;
+}
+
+.skill-category {
+  padding: 2.5rem 2rem;
+  text-align: center; /* Centers the Heading (H3) */
+  
+  /* Glassmorphism Effect */
+  background-color: rgba(37, 37, 37, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  
+  /* Flex layout to center children vertically/horizontally if needed */
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.skill-category h3 {
+  color: var(--accent-color);
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 0.5rem;
+  width: fit-content; /* Keeps the border-bottom limited to text width */
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center; /* Centers the skill spans horizontally */
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  border-color: rgba(50, 145, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
 }

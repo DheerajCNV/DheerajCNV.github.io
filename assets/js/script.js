@@ -246,7 +246,7 @@ document.addEventListener('DOMContentLoaded', () => {
           width: 1
         },
         collisions: {
-          enable: true
+          enable: false
         },
         move: {
           direction: "none",
@@ -275,4 +275,10 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+});
+
+// Add this inside your DOMContentLoaded listener or at the end of the file
+const skillCards = document.querySelectorAll('.skill-category');
+skillCards.forEach((card, index) => {
+  card.style.transitionDelay = `${index * 0.1}s`; // Staggers the appearance
 });
