@@ -473,6 +473,7 @@ footer {
 }
 
 .project-description {
+  text-align: justify;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -798,16 +799,13 @@ footer {
   height: 100%;
   top: 0;
   left: 0;
-  z-index: -2; /* Places it behind all content and the glow effect */
+  z-index: -2; 
 }
 
-/* ---Universal Project Detail Page Styles --- */
-
-/* Main glass container for the entire page content */
 .project-detail {
   max-width: 900px;
-  margin: 8rem auto 5rem; /* Centers the card and adds space from header/footer */
-  padding: 2.5rem 3.5rem; /* Internal spacing for content */
+  margin: 8rem auto 5rem; 
+  padding: 2.5rem 3.5rem; 
 
   /* Glassmorphism Effect */
   background-color: rgba(30, 30, 30, 0.45);
@@ -818,13 +816,11 @@ footer {
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* General styling for sections within the project detail card */
 .project-detail section {
   max-width: 800px;
-  margin: 2.5rem auto; /* Consistent spacing between sections */
+  margin: 2.5rem auto; 
 }
 
-/* Styling for headings and lists inside the card */
 .project-detail h2 {
   color: var(--accent-color);
   margin-bottom: 1rem;
@@ -837,12 +833,10 @@ footer {
   padding-left: 0;
 }
 
-/* Styles for the video demonstration section */
 .video-grid-section {
-  text-align: center; /* Center the 'Video Demonstrations' title */
+  text-align: center; 
 }
 
-/* Creates a responsive grid for the videos */
 .video-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -850,14 +844,12 @@ footer {
   margin-top: 1.5rem;
 }
 
-/* Style for the video element itself */
 .project-detail-video {
   width: 100%;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Style for the video captions */
 .video-caption {
   font-size: 0.9rem;
   color: var(--text-secondary);
@@ -866,19 +858,16 @@ footer {
   text-align: center;
 }
 
-/* --- Hover effect for project detail card --- */
 .project-detail:hover {
-  transform: translateY(-5px); /* Optional: lifts the card slightly */
+  transform: translateY(-5px); 
   border-color: rgba(50, 145, 255, 0.5);
   box-shadow: 0 0 25px rgba(50, 145, 255, 0.2);
 }
 
-/* 1. Restore the dark background color to the body */
 body {
-    background-color: #121212 !important; /* Sets the base color */
+    background-color: #121212 !important;
 }
 
-/* 2. Layer the particle canvas on top of the body, but behind the content */
 #tsparticles {
   position: fixed;
   width: 100%;
@@ -888,24 +877,22 @@ body {
   z-index: 0; /* Changed from -2 to 0 */
 }
 
-/* Mobile Adjustments for Floating Navbar */
 @media (max-width: 480px) {
   .navbar {
-    width: 95%;            /* Take up more horizontal space on mobile */
-    margin: 0.8rem auto;   /* Closer to the top of the screen */
+    width: 95%;
+    margin: 0.8rem auto;
     padding: 0.6rem 1.2rem; 
     border-radius: 20px;   
-    justify-content: space-between; /* Space between logo/text and toggle */
+    justify-content: space-between;
   }
 
   .nav-links {
     flex-direction: column;
     position: absolute;
-    top: 70px;             /* Positioned right below the floating bar */
-    left: 2.5%;            /* Centers the dropdown relative to the 95% width */
+    top: 70px;
+    left: 2.5%;
     width: 95%;
     
-    /* Mobile Glass Effect */
     background-color: rgba(30, 30, 30, 0.95); 
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
@@ -914,31 +901,28 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1.5rem 0;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    display: none;         /* Hidden by default; toggled by your script.js */
+    display: none;
   }
 
   .nav-links.active {
-    display: flex; /* Shown when menu-toggle is clicked */
+    display: flex;
   }
 
   .menu-toggle {
-    display: block; /* Ensure the hamburger icon is visible */
+    display: block;
   }
 }
 
-/* Performance optimization for glass and fixed elements */
 .navbar, .project-card, .snapshot-card, .coursework-card, .project-detail {
   will-change: transform, opacity;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* Ensure the main content doesn't trigger unnecessary repaints */
 .main-content {
   contain: padding;
 }
 
-/* --- Categorized Skills Grid --- */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); 
@@ -950,7 +934,7 @@ body {
 
 .skill-category {
   padding: 2.5rem 2rem;
-  text-align: center; /* Centers the Heading (H3) */
+  text-align: center;
   
   /* Glassmorphism Effect */
   background-color: rgba(37, 37, 37, 0.4);
@@ -960,7 +944,7 @@ body {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
   transition: transform 0.3s ease, border-color 0.3s ease;
   
-  /* Flex layout to center children vertically/horizontally if needed */
+
   display: flex;
   flex-direction: column;
   align-items: center; 
@@ -972,14 +956,14 @@ body {
   font-size: 1.3rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   padding-bottom: 0.5rem;
-  width: fit-content; /* Keeps the border-bottom limited to text width */
+  width: fit-content;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.8rem;
-  justify-content: center; /* Centers the skill spans horizontally */
+  justify-content: center;
 }
 
 .skill-category:hover {

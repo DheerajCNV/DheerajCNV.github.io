@@ -259,18 +259,18 @@
         <div class="project-info">
           <h3>Model free framework for Fault Detection and identification</h3>
           <p class="project-description">
-            In this project, we developed a model-free neural network-based fault detection and identification (FDI) 
-            framework for safety-critical autonomous systems. Unlike traditional residual-based methods that require 
-            precise system models, our approach leverages a switching mechanism and neural networks to detect and identify 
-            actuator faults directly from system inputs and outputs. We implemented this framework on Crazyflie quadcopter 
-            hardware, validating its effectiveness in maintaining safe altitude and control stability during induced motor failures.
+            In this project, we developed a model-free LSTM-based fault detection and identification (FDI) framework for quadrotor UAVs that 
+            learns actuator fault patterns directly from flight data, eliminating reliance on analytical system models. Using a dynamic symmetry–based 
+            training strategy, the detector was trained on a single-motor fault and generalized to all actuators. The framework was deployed for 
+            real-time inference at 100 Hz on a Crazyflie quadcopter, where it successfully identified partial-to-complete motor failures through 
+            simulation and hardware flight experiments, advancing robust and resilient autonomous flight control.
           </p>
           <button class="read-more-btn">Read more</button>
           <div class="project-tags">
             <span class="project-tag">Neural Networks</span>
-            <span class="project-tag">ROS</span>
+            <span class="project-tag">ROS2</span>
+            <span class="project-tag">LSTM</span>
             <span class="project-tag">Safety Control</span>
-            <span class="project-tag">Fault Detection & identification</span>
           </div>
           <div class="project-links">
             <a href="https://forge.engineering.asu.edu/participant/chilukuri-naga-venkata-dheeraj/"
